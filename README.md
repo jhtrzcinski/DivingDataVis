@@ -1,0 +1,1 @@
+"# Autoparametric_Resonance" 
