@@ -1,0 +1,25 @@
+{
+    "ACCOUNT_ID": "fa51c2be-cbd0-4b61-8d19-39eaaa988dc1",
+    "LICENSE_KEY": "key/eyJhY2NvdW50Ijp7ImlkIjoiMjAwM2JlZTctMGU4ZS00MjhjLTk3MjQtODdiOWMwODY2YmFjIn0sInByb2R1Y3QiOnsiaWQiOiIyYzMyNTdkZS1jN2MyLTQxZTgtOGVmOS1lNmY5YzU3MjcxNWEifSwicG9saWN5Ijp7ImlkIjoiNjllNzUyY2MtYzI1ZC00OGM4LTlkYTEtNjg2YTdmOWQxOTJmIiwiZHVyYXRpb24iOm51bGx9LCJ1c2VyIjpudWxsLCJsaWNlbnNlIjp7ImlkIjoiYjBjYzI1ZTktMDk2ZS00N2RkLWIzOTEtNWNkNTQ3MTUyYzUyIiwiY3JlYXRlZCI6IjIwMjMtMDUtMDlUMDM6Mzc6MjkuMDQyWiIsImV4cGlyeSI6bnVsbH19.LVYiyfAKB1RcsCfVjeURcDBc0cm9Bw3NCtExPIkAgeMPR3cie-T0U3zlkxvFftU8QD_rQeBUeHZFaCq4aalKBA==",
+    "PRODUCT_TOKEN": "d274c0b2-3b91-4ac3-aa05-9c34adbd78bd"
+
+}
+
+{
+    "data": {
+        "type": "machines",
+        "attributes": {
+            "fingerprint": "93:55:03:61:11:90:81:14",
+            "platform": "Windows",
+            "name": "DESKTOP-COVRB03"
+        },
+        "relationships": {
+            "license": {
+                "data": {
+                    "type": "licenses",
+                    
+                }
+            }
+        }
+    }
+}
