@@ -4,9 +4,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import argparse
-import sys
-import requests
-import json
 
 def main(input_file):
     # read data
@@ -62,58 +59,11 @@ def main(input_file):
 
     print("All done")
 
-def read_license_file(file_path):
-    try:
-        with open(file_path, 'r') as license_file:
-            license_data = json.load(license_file)
-            return license_data
-    except FileNotFoundError:
-        return None
-
-def verify_license_key(account_id, license_key, product_token):
-    url = f"https://api.keygen.sh/v1/account/{account_id}/licenses/actions/validate-key"
-    headers = {
-        "Content-Type": "application/vnd.api+json",
-        "Accept": "application/vnd.api+json",
-        "Authorization": f"Bearer {product_token}"
-        }
-    payload = {"meta": {"key": license_key}}
-
-    response = requests.post(url, json=payload, headers=headers)
-
-    if response.status_code == 200:
-        return True
-    else:
-        return False
-
 if __name__ == '__main__':
-    pwd = os.path.dirname(os.path.realpath(__file__))
-    license_file_path = os.path.join(pwd, 'license.json')
-
     parser = argparse.ArgumentParser(description="Generate dive performace graphs from a CSV file")
     parser.add_argument("input_file", help="Path to the input CSV file")
     args = parser.parse_args()
 
     input_file = args.input_file
-    license_data = read_license_file(license_file_path)
-
-    if license_data is None:
-        print("Error: License information not found. Make sure license.json is in the same directory as DivingBoard.exe/")
-        sys.exit(1)
-    
-    else:
-        account_id = license_data["ACCOUNT_ID"]
-        license_key = license_data["LICENSE_KEY"]
-        product_token = license_data["PRODUCT_TOKEN"]
-
-#    if not PRODUCT_TOKEN:
-#        print("Error: KEYGEN_PRODUCT_TOKEN environment variable is not set.")
-#        sys.exit(1)
-
-    if verify_license_key(account_id, license_key, product_token):
-        main(input_file)
-    else:
-        print("Invalid license key. Please provide a valid license key to use this program.")
-        sys.exit(1)
 
     main(input_file)
