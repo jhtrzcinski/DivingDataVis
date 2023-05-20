@@ -1,4 +1,5 @@
 import os
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -132,7 +133,7 @@ if __name__ == '__main__':
     label_file_explorer = Label(window, text = "Press \'Browse Files\' to select a file", width = 100, fg = "Blue")
     label_output_name = Label(window, text = "Name output folder:", width = 20)
     button_explore = Button(window, text = "Browse Files", command = browseFiles)
-    button_exit = Button(window, text="Exit", command=exit)
+    button_exit = Button(window, text="Exit", command=sys.exit())
     button_generate = Button(window, text="Generate", command=buttonClicked)
     output_name_entry = Entry(window, text = "Enter an output folder name", width= 50)
 
